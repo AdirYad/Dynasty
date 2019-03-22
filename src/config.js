@@ -39,6 +39,14 @@ try {
   throw new Error(`Error reading config file! The error given was: ${e.message}`);
 }
 
+const responseMessageMsg = `**Thread Created**
+
+Your message has been sent to the support team of Dynasty. The support team will get back to you as soon as possible!`;
+
+const closeMessageMsg = `**Thread Closed**
+
+Your thread has closed by the support team. If you have another question, don't hesitate to create another thread.`;
+
 const defaultConfig = {
   "token": null,
   "mailGuildId": null,
@@ -50,8 +58,8 @@ const defaultConfig = {
   "snippetPrefixAnon": "!!!",
 
   "status": "Message me for help!",
-  "responseMessage": "Thank you for your message! Our mod team will reply to you here as soon as possible.",
-  "closeMessage": null,
+  "responseMessage": responseMessageMsg,
+  "closeMessage": closeMessageMsg,
   "allowUserClose": false,
 
   "newThreadCategoryId": null,
@@ -62,7 +70,7 @@ const defaultConfig = {
   "inboxServerPermission": null,
   "alwaysReply": false,
   "alwaysReplyAnon": false,
-  "useNicknames": false,
+  "useNicknames": true,
   "ignoreAccidentalThreads": false,
   "threadTimestamps": false,
   "allowMove": false,

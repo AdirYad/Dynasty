@@ -187,8 +187,8 @@ module.exports = {
     await logs(bot);
     await block(bot);
     await move(bot);
-    await snippets(bot);
-    await suspend(bot);
+    // await snippets(bot);
+    // await suspend(bot);
     await greeting(bot);
     await webserver(bot);
     await typingProxy(bot);
