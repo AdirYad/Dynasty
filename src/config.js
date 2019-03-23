@@ -4,28 +4,28 @@ const path = require('path');
 
 let userConfig;
 
-// Try to find our config file from several options
-const configFiles = [
-  'config.json',
-  'config.json5',
-  'config.json.json',
-  'config.json.txt',
-  'config.js'
-];
+// // Try to find our config file from several options
+// const configFiles = [
+//   'config.json',
+//   'config.json5',
+//   'config.json.json',
+//   'config.json.txt',
+//   'config.js'
+// ];
 
-let foundConfigFile;
+// let foundConfigFile;
 
-for (const configFile of configFiles) {
-  try {
-    fs.accessSync(__dirname + '/../' + configFile);
-    foundConfigFile = configFile;
-    break;
-  } catch (e) {}
-}
+// for (const configFile of configFiles) {
+//   try {
+//     fs.accessSync(__dirname + '/../' + configFile);
+//     foundConfigFile = configFile;
+//     break;
+//   } catch (e) {}
+// }
 
-if (! foundConfigFile) {
-  throw new Error(`Could not find config.json!`);
-}
+// if (! foundConfigFile) {
+//   throw new Error(`Could not find config.json!`);
+// }
 
 // Parse the config using JSON5
 try {
@@ -48,7 +48,7 @@ const closeMessageMsg = `**Thread Closed**
 Your thread has closed by the support team. If you have another question, don't hesitate to create another thread.`;
 
 const defaultConfig = {
-  "token": NTU4NzQ3MDgxNzQ1ODkxMzM2.D3bWOw.0aJz3kWTw8K2fVtM4t5yR_PUxpA,
+  "token": null,
   "mailGuildId": "558752417269678108",
   "mainGuildId": "558674335259164672",
   "logChannelId": "558752916270350346",
