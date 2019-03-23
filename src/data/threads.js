@@ -11,8 +11,6 @@ const utils = require('../utils');
 const Thread = require('./Thread');
 const {THREAD_STATUS} = require('./constants');
 
-const discord = require('discord.js');
-
 /**
  * @param {String} id
  * @returns {Promise<Thread>}
