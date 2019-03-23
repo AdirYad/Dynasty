@@ -184,15 +184,15 @@ module.exports = {
     console.log('Loading modules...');
     await reply(bot);
     await close(bot);
-    await logs(bot);
+    // await logs(bot);
     await block(bot);
     await move(bot);
     // await snippets(bot);
     // await suspend(bot);
     await greeting(bot);
-    await webserver(bot);
+    // await webserver(bot);
     await typingProxy(bot);
-    await version(bot);
+    // await version(bot);
     await newthread(bot);
     await idModule(bot);
     await alert(bot);

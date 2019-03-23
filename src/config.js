@@ -1,6 +1,3 @@
-const discord = require('discord.js');
-const bot = new discord.Client({disableEveryone: true});
-
 const json5 = require('json5');
 const fs = require('fs');
 const path = require('path');
