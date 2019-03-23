@@ -65,6 +65,8 @@ class Moshe extends commando.Command {
   }
 }
 
+module.export = Moshe;
+
 const responseMessageMsg = `**Thread Created**
 
 Your message has been sent to the support team of Dynasty. The support team will get back to you as soon as possible!`;
