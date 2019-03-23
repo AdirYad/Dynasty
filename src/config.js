@@ -1,3 +1,5 @@
+const discord = require('discord.js');
+
 const json5 = require('json5');
 const fs = require('fs');
 const path = require('path');
@@ -39,6 +41,14 @@ try {
   throw new Error(`Error reading config file! The error given was: ${e.message}`);
 }
 
+const responseEmbedMessage = new discord.RichEmbed()
+.setColor('#008000')
+.setTitle('Moshe')
+.setDescription('Agever')
+.addField('Adir', 'Yed', true)
+.addField('rida', 'dey', false)
+.setFooter('Admin', Date.now());
+
 const responseMessageMsg = `**Thread Created**
 
 Your message has been sent to the support team of Dynasty. The support team will get back to you as soon as possible!`;
@@ -58,7 +68,7 @@ const defaultConfig = {
   "snippetPrefixAnon": "!!!",
 
   "status": "Message me for help!",
-  "responseMessage": responseMessageMsg,
+  "responseMessage": responseEmbedMessage,
   "closeMessage": closeMessageMsg,
   "allowUserClose": false,
 
