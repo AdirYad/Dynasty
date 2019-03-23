@@ -54,7 +54,7 @@ function getHeaderGuildInfo(member) {
  */
 
   const responseEmbedMessage = new discord.RichEmbed()
-    .setColor(green)
+    .setColor('#008000')
     .setTitle('Moshe')
     .setDescription('Agever')
     .setField('Adir', 'Yed', true)
