@@ -28,16 +28,16 @@ let userConfig;
 // }
 
 // Parse the config using JSON5
-try {
-  if (foundConfigFile.endsWith('.js')) {
-    userConfig = require(`../${foundConfigFile}`);
-  } else {
-    const raw = fs.readFileSync(__dirname + '/../' + foundConfigFile);
-    userConfig = json5.parse(raw);
-  }
-} catch (e) {
-  throw new Error(`Error reading config file! The error given was: ${e.message}`);
-}
+// try {
+//   if (foundConfigFile.endsWith('.js')) {
+//     userConfig = require(`../${foundConfigFile}`);
+//   } else {
+//     const raw = fs.readFileSync(__dirname + '/../' + foundConfigFile);
+//     userConfig = json5.parse(raw);
+//   }
+// } catch (e) {
+//   throw new Error(`Error reading config file! The error given was: ${e.message}`);
+// }
 
 const responseMessageMsg = `**Thread Created**
 
