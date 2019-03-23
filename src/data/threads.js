@@ -53,15 +53,6 @@ function getHeaderGuildInfo(member) {
  * @throws {Error}
  */
 
-  const responseEmbedMessage = new discord.RichEmbed()
-    .setColor('#008000')
-    .setTitle('Moshe')
-    .setDescription('Agever')
-    .setField('Adir', 'Yed', true)
-    .setField('rida', 'dey', false)
-    // .setFooter('Admin', Date.now())
-    ;
-
 async function createNewThreadForUser(user, quiet = false) {
   const existingThread = await findOpenThreadByUserId(user.id);
   if (existingThread) {
@@ -119,6 +110,14 @@ async function createNewThreadForUser(user, quiet = false) {
         disableEveryone: false
       });
     }
+
+    const responseEmbedMessage = new discord.RichEmbed()
+      .setColor('#008000')
+      .setTitle('Moshe')
+      .setDescription('Agever')
+      .setField('Adir', 'Yed', true)
+      // .setField('rida', 'dey', false)
+      .setFooter('Admin', Date.now());
 
     // Send auto-reply to the user
     if (config.responseMessage) {
