@@ -11,6 +11,8 @@ const utils = require('../utils');
 const Thread = require('./Thread');
 const {THREAD_STATUS} = require('./constants');
 
+const discord = require('discord.js');
+
 /**
  * @param {String} id
  * @returns {Promise<Thread>}
@@ -50,6 +52,15 @@ function getHeaderGuildInfo(member) {
  * @returns {Promise<Thread>}
  * @throws {Error}
  */
+
+  const responseEmbedMessage = new discord.RichEmbed()
+    .setColor(green)
+    .setTitle('Moshe')
+    .setDescription('Agever')
+    .setField('Adir', 'Yed', true)
+    .setField('rida', 'dey', false)
+    .setFooter('Admin', Date.now());
+
 async function createNewThreadForUser(user, quiet = false) {
   const existingThread = await findOpenThreadByUserId(user.id);
   if (existingThread) {
@@ -111,7 +122,7 @@ async function createNewThreadForUser(user, quiet = false) {
     // Send auto-reply to the user
     if (config.responseMessage) {
       try {
-        await newThread.postToUser(config.responseMessage);
+        await newThread.postToUser(responseEmbedMessage);
       } catch (err) {
         responseMessageError = err;
       }
