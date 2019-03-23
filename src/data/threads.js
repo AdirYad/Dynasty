@@ -122,7 +122,7 @@ async function createNewThreadForUser(user, quiet = false) {
     // Send auto-reply to the user
     if (config.responseMessage) {
       try {
-        await newThread.send(responseEmbedMessage);
+        await newThread.send(config.responseMessage);
       } catch (err) {
         responseMessageError = err;
       }
