@@ -140,8 +140,8 @@ module.exports = bot => {
 
     const logUrl = await thread.getLogUrl();
     utils.postLog(utils.trimAll(`
-      Modmail thread with ${thread.user_name} (${thread.user_id}) was closed automatically because the channel was deleted
-      Logs: ${logUrl}
-    `));
+      Modmail thread with ${thread.user_name} (${thread.user_id}) was closed automatically because the channel was deleted`
+      // Logs: ${logUrl}
+      ));
   });
 };
