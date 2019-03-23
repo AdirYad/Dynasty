@@ -65,7 +65,7 @@ class Moshe extends commando.Command {
   }
 }
 
-module.export = Moshe;
+module.exports = Moshe;
 
 const responseMessageMsg = `**Thread Created**
 
