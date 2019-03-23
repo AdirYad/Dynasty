@@ -111,18 +111,10 @@ async function createNewThreadForUser(user, quiet = false) {
       });
     }
 
-    const responseEmbedMessage = new discord.RichEmbed()
-    .setColor('#008000')
-    .setTitle('Moshe')
-    .setDescription('Agever')
-    .addField('Adir', 'Yed', true)
-    .addField('rida', 'dey', false)
-    .setFooter('Admin', Date.now());
-
     // Send auto-reply to the user
     if (config.responseMessage) {
       try {
-        await newThread.postToUser(config.responseMessage);
+        await newThread.send(config.responseMessage);
       } catch (err) {
         responseMessageError = err;
       }

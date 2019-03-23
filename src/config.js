@@ -42,12 +42,13 @@ try {
 }
 
 const responseEmbedMessage = new discord.RichEmbed()
-.setColor('#008000')
-.setTitle('Moshe')
-.setDescription('Agever')
-.addField('Adir', 'Yed', true)
-.addField('rida', 'dey', false)
-.setFooter('Admin', Date.now());
+  .setColor('#008000')
+  .setTitle('Moshe')
+  .setDescription('Agever')
+  .addField('Adir', 'Yed', true)
+  .addField('rida', 'dey', false)
+  .setTimestamp()
+  .setFooter('Admin');
 
 const responseMessageMsg = `**Thread Created**
 
