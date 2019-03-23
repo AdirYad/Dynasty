@@ -48,10 +48,10 @@ const closeMessageMsg = `**Thread Closed**
 Your thread has closed by the support team. If you have another question, don't hesitate to create another thread.`;
 
 const defaultConfig = {
-  "token": null,
-  "mailGuildId": null,
-  "mainGuildId": null,
-  "logChannelId": null,
+  "token": NTU4NzQ3MDgxNzQ1ODkxMzM2.D3bWOw.0aJz3kWTw8K2fVtM4t5yR_PUxpA,
+  "mailGuildId": "558752417269678108",
+  "mainGuildId": "558674335259164672",
+  "logChannelId": "558752916270350346",
 
   "prefix": "!",
   "snippetPrefix": "!!",
