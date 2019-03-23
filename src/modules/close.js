@@ -19,9 +19,9 @@ module.exports = bot => {
 
       const logUrl = await thread.getLogUrl();
       utils.postLog(utils.trimAll(`
-        Modmail thread with ${thread.user_name} (${thread.user_id}) was closed as scheduled by ${thread.scheduled_close_name}
-        Logs: ${logUrl}
-      `));
+        Modmail thread with ${thread.user_name} (${thread.user_id}) was closed as scheduled by ${thread.scheduled_close_name}`
+        // Logs: ${logUrl}
+      ));
     }
   }
 
@@ -121,9 +121,9 @@ module.exports = bot => {
 
     const logUrl = await thread.getLogUrl();
     utils.postLog(utils.trimAll(`
-      Modmail thread with ${thread.user_name} (${thread.user_id}) was closed by ${closedBy}
-      Logs: ${logUrl}
-    `));
+      Modmail thread with ${thread.user_name} (${thread.user_id}) was closed by ${closedBy}`
+      // Logs: ${logUrl}
+    ));
   });
 
   // Auto-close threads if their channel is deleted
