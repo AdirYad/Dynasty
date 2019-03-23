@@ -59,7 +59,8 @@ function getHeaderGuildInfo(member) {
     .setDescription('Agever')
     .setField('Adir', 'Yed', true)
     .setField('rida', 'dey', false)
-    .setFooter('Admin', Date.now());
+    // .setFooter('Admin', Date.now())
+    ;
 
 async function createNewThreadForUser(user, quiet = false) {
   const existingThread = await findOpenThreadByUserId(user.id);
@@ -122,7 +123,7 @@ async function createNewThreadForUser(user, quiet = false) {
     // Send auto-reply to the user
     if (config.responseMessage) {
       try {
-        await newThread.send(responseEmbedMessage);
+        await newThread.postToUser(responseEmbedMessage);
       } catch (err) {
         responseMessageError = err;
       }
