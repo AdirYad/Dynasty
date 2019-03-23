@@ -1,4 +1,5 @@
 const discord = require('discord.js');
+const commando = require('discord.js-commando');
 
 const json5 = require('json5');
 const fs = require('fs');
@@ -41,7 +42,7 @@ try {
   throw new Error(`Error reading config file! The error given was: ${e.message}`);
 }
 
-class Moshe {
+class Moshe extends commando.Command {
   constructor(client) {
     super(client, {
       name: 'info',
