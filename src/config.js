@@ -45,7 +45,7 @@ try {
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online`);
   bot.user.username("on SourceCade!")
-})
+});
 
 bot.on("Message", async message => {
   if(message.author.bot) return;
@@ -67,7 +67,7 @@ bot.on("Message", async message => {
   
     return message.channel.send(responseEmbedMessage);
   }
-})
+});
   
 const responseMessageMsg = `**Thread Created**
 
