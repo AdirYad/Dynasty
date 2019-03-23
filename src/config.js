@@ -48,7 +48,7 @@ const closeMessageMsg = `**Thread Closed**
 Your thread has closed by the support team. If you have another question, don't hesitate to create another thread.`;
 
 const defaultConfig = {
-  "token": null,
+  "token": process.env.token,
   "mailGuildId": null,
   "mainGuildId": null,
   "logChannelId": null,
@@ -63,7 +63,7 @@ const defaultConfig = {
   "allowUserClose": false,
 
   "newThreadCategoryId": null,
-  "mentionRole": "here",
+  "mentionRole": "everyone",
   "pingOnBotMention": true,
   "botMentionResponse": null,
 
