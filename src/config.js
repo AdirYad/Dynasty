@@ -45,7 +45,7 @@ Your message has been sent to the support team of Dynasty. The support team will
 
 const closeMessageMsg = `**Thread Closed**
 
-Your thread has closed by the support team. If you have another question, don't hesitate to create another thread.`;
+Your thread has been closed by the support team. If you have another question, don't hesitate to create another thread.`;
 
 const defaultConfig = {
   "token": process.env.token,
