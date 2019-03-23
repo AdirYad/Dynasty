@@ -41,33 +41,6 @@ try {
 } catch (e) {
   throw new Error(`Error reading config file! The error given was: ${e.message}`);
 }
-
-bot.on("ready", async () => {
-  console.log(`${bot.user.username} is online`);
-  bot.user.username("on SourceCade!")
-});
-
-bot.on("Message", async message => {
-  if(message.author.bot) return;
-  if(message.channel.type === "dm") return
-
-  let prefix = "#";
-  let messageArray = message.content.split(" ");
-  let cmd = messageArray[0];
-  let args = messageArray.slice[1];
-
-  if(cmd === `${prefix}botinfo`) {
-    const responseEmbedMessage = new discord.RichEmbed()
-    .setColor('#008000')
-    .setTitle('Moshe')
-    .setDescription('Agever')
-    .addField('Adir', 'Yed', true)
-    .setTimestamp()
-    .setFooter('Admin');
-  
-    return message.channel.send(responseEmbedMessage);
-  }
-});
   
 const responseMessageMsg = `**Thread Created**
 
