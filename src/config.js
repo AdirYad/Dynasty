@@ -68,7 +68,7 @@ const defaultConfig = {
   "botMentionResponse": null,
 
   "inboxServerPermission": null,
-  "alwaysReply": true,
+  "alwaysReply": false,
   "alwaysReplyAnon": false,
   "useNicknames": true,
   "ignoreAccidentalThreads": false,
