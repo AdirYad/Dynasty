@@ -1,5 +1,5 @@
 const discord = require('discord.js');
-const commando = require('discord.js-commando');
+const bot = new discord.Client({disableEveryone: true});
 
 const json5 = require('json5');
 const fs = require('fs');
@@ -42,61 +42,33 @@ try {
   throw new Error(`Error reading config file! The error given was: ${e.message}`);
 }
 
-class Moshe extends commando.Command {
-  constructor(client) {
-    super(client, {
-      name: 'info',
-      group: 'src',
-      memberName: 'info',
-      description: 'Learn a little bit more'
-    });
-  }
+bot.on("ready", async () => {
+  console.log(`${bot.user.username} is online`);
+  bot.user.username("on SourceCade!")
+})
+
+bot.on("Message", async message => {
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return
+
+  let prefix = "#";
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice[1];
+
+  if(cmd === `${prefix}botinfo`) {
+    const responseEmbedMessage = new discord.RichEmbed()
+    .setColor('#008000')
+    .setTitle('Moshe')
+    .setDescription('Agever')
+    .addField('Adir', 'Yed', true)
+    .setTimestamp()
+    .setFooter('Admin');
   
-  async run(message, args) {
-  // const responseEmbedMessage = new discord.RichEmbed()
-  //   .setColor('#008000')
-  //   .setTitle('Moshe')
-  //   .setDescription('Agever')
-  //   .addField('Adir', 'Yed', true)
-  //   .setTimestamp()
-  //   .setFooter('Admin'); 
+    return message.channel.send(responseEmbedMessage);
+  }
+})
   
-  message.channel.send({embed: {
-    color: 3447003,
-    author: {
-      name: client.user.username,
-      icon_url: client.user.avatarURL
-    },
-    title: "This is an embed",
-    url: "http://google.com",
-    description: "This is a test embed to showcase what they look like and what they can do.",
-    fields: [{
-        name: "Fields",
-        value: "They can have different fields with small headlines."
-      },
-      {
-        name: "Masked links",
-        value: "You can put [masked links](http://google.com) inside of rich embeds."
-      },
-      {
-        name: "Markdown",
-        value: "You can put all the *usual* **__Markdown__** inside of them."
-      }
-    ],
-    timestamp: new Date(),
-    footer: {
-      icon_url: client.user.avatarURL,
-      text: "© Example"
-    }
-  }
-});
-
-  // message.channel.sendEmbed(responseEmbedMessage);
-  }
-}
-
-module.exports = Moshe;
-
 const responseMessageMsg = `**Thread Created**
 
 Your message has been sent to the support team of Dynasty. The support team will get back to you as soon as possible!`;
