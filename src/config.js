@@ -4,40 +4,40 @@ const path = require('path');
 
 let userConfig;
 
-// // Try to find our config file from several options
-// const configFiles = [
-//   'config.json',
-//   'config.json5',
-//   'config.json.json',
-//   'config.json.txt',
-//   'config.js'
-// ];
+// Try to find our config file from several options
+const configFiles = [
+  'config.json',
+  'config.json5',
+  'config.json.json',
+  'config.json.txt',
+  'config.js'
+];
 
-// let foundConfigFile;
+let foundConfigFile;
 
-// for (const configFile of configFiles) {
-//   try {
-//     fs.accessSync(__dirname + '/../' + configFile);
-//     foundConfigFile = configFile;
-//     break;
-//   } catch (e) {}
-// }
+for (const configFile of configFiles) {
+  try {
+    fs.accessSync(__dirname + '/../' + configFile);
+    foundConfigFile = configFile;
+    break;
+  } catch (e) {}
+}
 
-// if (! foundConfigFile) {
-//   throw new Error(`Could not find config.json!`);
-// }
+if (! foundConfigFile) {
+  throw new Error(`Could not find config.json!`);
+}
 
 // Parse the config using JSON5
-// try {
-//   if (foundConfigFile.endsWith('.js')) {
-//     userConfig = require(`../${foundConfigFile}`);
-//   } else {
-//     const raw = fs.readFileSync(__dirname + '/../' + foundConfigFile);
-//     userConfig = json5.parse(raw);
-//   }
-// } catch (e) {
-//   throw new Error(`Error reading config file! The error given was: ${e.message}`);
-// }
+try {
+  if (foundConfigFile.endsWith('.js')) {
+    userConfig = require(`../${foundConfigFile}`);
+  } else {
+    const raw = fs.readFileSync(__dirname + '/../' + foundConfigFile);
+    userConfig = json5.parse(raw);
+  }
+} catch (e) {
+  throw new Error(`Error reading config file! The error given was: ${e.message}`);
+}
 
 const responseMessageMsg = `**Thread Created**
 
@@ -49,9 +49,9 @@ Your thread has closed by the support team. If you have another question, don't 
 
 const defaultConfig = {
   "token": null,
-  "mailGuildId": "558752417269678108",
-  "mainGuildId": "558674335259164672",
-  "logChannelId": "558752916270350346",
+  "mailGuildId": null,
+  "mainGuildId": null,
+  "logChannelId": null,
 
   "prefix": "!",
   "snippetPrefix": "!!",
