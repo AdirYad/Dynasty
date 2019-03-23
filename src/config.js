@@ -84,7 +84,7 @@ const defaultConfig = {
   "snippetPrefixAnon": "!!!",
 
   "status": "Message me for help!",
-  "responseMessage": responseEmbedMessage,
+  "responseMessage": responseMessageMsg,
   "closeMessage": closeMessageMsg,
   "allowUserClose": false,
 
