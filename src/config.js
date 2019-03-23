@@ -48,7 +48,8 @@ const responseEmbedMessage = new discord.RichEmbed()
   .addField('Adir', 'Yed', true)
   .addField('rida', 'dey', false)
   .setTimestamp()
-  .setFooter('Admin');
+  .setFooter('Admin')
+  console.log("boop" + responseEmbedMessage);
 
 const responseMessageMsg = `**Thread Created**
 
