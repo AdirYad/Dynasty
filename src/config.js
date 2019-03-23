@@ -41,15 +41,28 @@ try {
   throw new Error(`Error reading config file! The error given was: ${e.message}`);
 }
 
-const responseEmbedMessage = new discord.RichEmbed()
-  .setColor('#008000')
-  .setTitle('Moshe')
-  .setDescription('Agever')
-  .addField('Adir', 'Yed', true)
-  .addField('rida', 'dey', false)
-  .setTimestamp()
-  .setFooter('Admin')
-  console.log("boop" + responseEmbedMessage);
+class Moshe {
+  constructor(client) {
+    super(client, {
+      name: 'info',
+      group: 'src',
+      memberName: 'info',
+      description: 'Learn a little bit more'
+    });
+  }
+  
+  async run(message, args) {
+  const responseEmbedMessage = new discord.RichEmbed()
+    .setColor('#008000')
+    .setTitle('Moshe')
+    .setDescription('Agever')
+    .addField('Adir', 'Yed', true)
+    .setTimestamp()
+    .setFooter('Admin'); 
+  
+  message.channel.sendEmbed(responseEmbedMessage);
+  }
+}
 
 const responseMessageMsg = `**Thread Created**
 
