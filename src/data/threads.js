@@ -111,18 +111,18 @@ async function createNewThreadForUser(user, quiet = false) {
       });
     }
 
-    // const responseEmbedMessage = new discord.RichEmbed()
-    //   .setColor('#008000')
-    //   .setTitle('Moshe')
-    //   .setDescription('Agever')
-    //   .setField('Adir', 'Yed', true)
-    //   // .setField('rida', 'dey', false)
-    //   .setFooter('Admin', Date.now());
+    const responseEmbedMessage = new discord.RichEmbed()
+    .setColor('#008000')
+    .setTitle('Moshe')
+    .setDescription('Agever')
+    .setField('Adir', 'Yed', true)
+    // .setField('rida', 'dey', false)
+    .setFooter('Admin', Date.now());
 
     // Send auto-reply to the user
     if (config.responseMessage) {
       try {
-        await newThread.send(config.responseMessage);
+        await newThread.postToUser(responseEmbedMessage);
       } catch (err) {
         responseMessageError = err;
       }
